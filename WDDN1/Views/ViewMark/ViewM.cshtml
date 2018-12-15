@@ -1,0 +1,42 @@
+﻿@model IEnumerable<WDDN1.Models.Mark>
+
+@{
+    ViewBag.Title = "ViewM";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<environment names="Development">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+</environment>
+<h2>Result</h2>
+<table class="striped hoverable animated bounceInLeft" >
+    <tr>
+        <th><blockquote>Subjects</blockquote></th>
+        <th><blockquote>Marks</blockquote></th>
+    </tr>
+    @{
+        int count = 0;
+        double total = 0;
+        foreach (var m in Model)
+        {
+            count += 1;
+            total += m.marks;
+            <tr>
+                <td> @Html.DisplayFor(modelItem => m.course.CourseName)</td>
+                <td>@Html.DisplayFor(modelItem => m.marks)</td>
+            </tr>
+        }
+
+        double average = total / count;
+    }
+   
+</table>
+<blockquote>
+    <h3 class="center-align teal-text darken4 animated zoomIn">
+        @average Is Your Average Performance!
+    </h3>
+</blockquote>
