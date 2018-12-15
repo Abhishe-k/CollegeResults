@@ -60,8 +60,8 @@ namespace WDDN1
               */
             app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             {
-                ClientId = "321610173764-llkdqqg4dne30nsaqcd3mgl4m4l9cond.apps.googleusercontent.com",
-                ClientSecret = "XGEW-WzhNCU1bzjjXkRNX85Y"
+                ClientId = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+                ClientSecret = "XXXXXXXXXXXXXXXXXXXXXXX"
             });
         }
     }
